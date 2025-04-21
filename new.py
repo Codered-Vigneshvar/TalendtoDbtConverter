@@ -20,7 +20,7 @@ for d in (UPLOAD_DIR, RESULTS_DIR):
 
 API_KEY = os.getenv("GEN_API_KEY")
 if not API_KEY:
-    print("❌ Please set GEN_API_KEY in your environment", file=sys.stderr)
+    print("Please set GEN_API_KEY in your environment", file=sys.stderr)
     sys.exit(1)
 
 genai.configure(api_key=API_KEY)
