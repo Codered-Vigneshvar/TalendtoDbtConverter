@@ -36,7 +36,7 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16 MB
 def index():
     return send_from_directory(BASE_DIR, "talendtodbt.html")
 
-# 1️⃣ Convert endpoint: XML → raw_output + SQL skeleton
+# Convert endpoint: XML → raw_output + SQL skeleton
 @app.route("/convert", methods=["POST"])
 def convert():
     try:
@@ -95,7 +95,7 @@ def convert():
         traceback.print_exc()
         return jsonify({"error": str(e)}), 500
 
-# 2️⃣ Generate commented SQL from convert() JSON
+# Generate commented SQL from convert() JSON
 @app.route("/generate_sql", methods=["POST"])
 def generate_sql():
     try:
